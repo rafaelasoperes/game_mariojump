@@ -33,3 +33,18 @@ const loop = setInterval(() => {
 },10);
 
 document.addEventListener('keydown' , jump)
+
+    var jogar = false;
+    var pontuacao = -1;
+    var maximopontuacao = 0;
+
+    function fim() {
+    jogar = false;
+    document.getElementById(".pipe").style.display = 'none';
+    document.getElementById("obstaculo2").style.display = 'none';
+    
+    if(pontuacao < 0){
+        pontuacao = 0; document.getElementById("pontos").innerHTML = '<center><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><a href="javascript:;;"  class="botao"  onclick="javascript:jogue();">Play</a></center>';}
+    else{ 
+        document.getElementById("pontos").innerHTML = '<div align=center style=font-size:25px><br><br>Pontos: '+pontuacao+' &nbsp;&nbsp;&nbsp;&nbsp; Máximo: '+maximopontuacao+'<h1>Game Over</h1></div><center><br><br><br><br><br><br><br><a href="javascript:;;"  class="botao"  onclick="javascript:jogue();">Play</a></center>';}
+    }
